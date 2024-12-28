@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My 宝宝</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffe4e1;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff6b81;
+      position: relative;
+      top: -30px;
+    }
+    .heart {
+      width: 150px;
+      height: 150px;
+      background-color: #ff6b81;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+      cursor: pointer;
+      margin: 20px auto;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 150px;
+      height: 150px;
+      background-color: #ff6b81;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+    .heart::after {
+      left: 75px;
+      top: 0;
+    }
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 >For My 宝宝</h1>
+    <div class="heart" onclick="openLetter()"></div>
+    <p style="color: #ff6b81; font-size: 1.2em;">扑通扑通，我的心为你跳动～</p>
+  </div>
+
+  <script>
+    function openLetter() {
+      window.location.href = "letter.html";
+    }
+  </script>
+</body>
+</html>
